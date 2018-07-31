@@ -52,7 +52,8 @@
 				var img = button.previousSibling
 				var key = button.id // q w e r t
 				var url = prompt('给我一个网址') // qq.com
-				hash.key = url  // hash 变更
+				hash[key] = url  // hash 变更
+				
 				img.src = 'http://'+ url + '/favicon.ico'
 				img.onerror = function(e){
 					e.target.src = '1.png'
