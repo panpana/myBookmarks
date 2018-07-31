@@ -48,13 +48,13 @@
 			button.textContent = '编辑'
 			button.id = id
 			button.onclick = function(e){
-				var button2 = e.target
-				var img2 = button2.previousSibling
-				var key = button2.id // q w e r t
+				var button = e.target
+				var img = button.previousSibling
+				var key = button.id // q w e r t
 				var url = prompt('给我一个网址') // qq.com
 				hash.key = url  // hash 变更
-				img2.src = 'http://'+ url + '/favicon.ico'
-				img2.onerror = function(e){
+				img.src = 'http://'+ url + '/favicon.ico'
+				img.onerror = function(e){
 					e.target.src = '1.png'
 				}
 				localStorage.setItem('saveURL', JSON.stringify(hash))
@@ -100,30 +100,30 @@
 
 				main.appendChild(div)
 
-			var row = keys[index]  // 第一个数组  第二个数组  第三个数组
-			for(var index2 =0;index2< row.length; index2++){
-				var span = createSpan(row[index2])
+				var row = keys[index]  // 第一个数组  第二个数组  第三个数组
+				for(var i =0;i< row.length; i++){
+					var span = createSpan(row[i])
 
-				var button = createButton(row[index2])
+					var button = createButton(row[i])
 
-				var img = createImage(hash[row[index2]])
+					var img = createImage(hash[row[i]])
 
-				var kbd = tag('kbd')
-				kbd.className = 'key'
+					var kbd = tag('kbd')
+					kbd.className = 'key'
 
-				kbd.appendChild(span)
-				kbd.appendChild(img)
-				kbd.appendChild(button)
+					kbd.appendChild(span)
+					kbd.appendChild(img)
+					kbd.appendChild(button)
 
-				div.appendChild(kbd)
-			}
+					div.appendChild(kbd)
+				}
 		}
 	}	
 	function listenToUser(hash){
 		document.onkeypress = function(e){
 				var key = e.key // q w e
-				var website = hash.key
-				//location.href = 'http://'+website
+				var website = hash[key]
+				// location.href = 'http://'+website
 				window.open('http://'+website, '_blank')
 			}
 		}
