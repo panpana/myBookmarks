@@ -56,7 +56,7 @@
 				
 				img.src = 'http://'+ url + '/favicon.ico'
 				img.onerror = function(e){
-					e.target.src = '1.png'
+					e.target.src = '2.png'
 				}
 				localStorage.setItem('saveURL', JSON.stringify(hash))
 			}
@@ -70,7 +70,7 @@
 				img.src = '1.png'
 			}
 			img.onerror = function(e){
-				e.target.src = '1.png'
+				e.target.src = '2.png'
 			}
 			return img
 		}
