@@ -30,7 +30,7 @@
 		
 		// 工具函数
 		function getFromLocalStorage(name){
-			return JSON.parse(localStorage.getItem(name) || 'null')
+			return JSON.parse(localStorage.getItem(name) || '')
 		}
 
 		function tag(tagName){
@@ -51,8 +51,10 @@
 				var button = e.target
 				var img = button.previousSibling
 				var key = button.id // q w e r t
-				var url = prompt('给我一个网址') // qq.com
+				var url = prompt('给我一个网址',JSON.parse(localStorage.getItem('saveURL'))[key] || "")// qq.com
 				hash[key] = url  // hash 变更
+
+				console.log(JSON.parse(localStorage.getItem('saveURL'))[key])
 				
 				img.src = 'http://'+ url + '/favicon.ico'
 				img.onerror = function(e){
