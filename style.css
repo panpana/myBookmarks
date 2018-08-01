@@ -1,8 +1,8 @@
-*{margin: 0; padding: 0;}
+*{margin: 0; padding: 0;transition: 0.3s ease}
 a{text-decoration: none;}
 kbd{border: 1px solid red;width:4em; height: 4em; display: inline-block; text-transform: uppercase; position: relative; }
 kbd > button{position: absolute; right: 0; bottom: 0; display: none; }
-kbd:hover > button{display: inline-block; }
+kbd:hover > button{display: inline-block;background-color: #a9a9a9;border-radius: 2px; }
 body{background: grey url(./wall.jpg) no-repeat center center ; background-size: cover}
 main{text-align: center; display: flex; justify-content: center; align-items: center; height: 100vh; }
 #main{display: inline-block; }
