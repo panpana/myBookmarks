@@ -57,6 +57,9 @@
 				console.log(JSON.parse(localStorage.getItem('saveURL'))[key])
 				
 				img.src = 'http://'+ url + '/favicon.ico'
+				if(!url){
+					img.src = '1.png'
+				}
 				img.onerror = function(e){
 					e.target.src = '2.png'
 				}
